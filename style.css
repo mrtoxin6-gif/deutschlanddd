@@ -1,0 +1,373 @@
+body {
+  font-family: var(--font-main);
+  background: linear-gradient(135deg, #f0f9ff, #dff1ff);
+  background-image: url('img/bg-pattern.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: var(--color-text);
+  line-height: 1.6;
+  padding: 1rem;
+}
+/* === Переменные для темизации и переиспользования === */
+:root {
+  --font-main: 'Inter', sans-serif;
+  --color-bg: #f9f9f9;
+  --color-text: #222;
+  --color-accent: #0077ff;
+  --color-muted: #666;
+  --border-radius: 0.5rem;
+  --transition-fast: 0.2s ease-in-out;
+}
+
+/* === Сброс и базовые стили === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--font-main);
+  background: linear-gradient(135deg, #f0f9ff, #dff1ff);
+  color: var(--color-text);
+  line-height: 1.6;
+  padding: 1rem;
+  background-image: url('img/bg-pattern.svg'); /* или bg.jpg */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* === Контейнеры и сетка === */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  margin: 0.5rem;
+}
+
+.button:hover {
+  background-color: #005fcc;
+  transform: scale(1.05);
+}
+
+.button:hover {
+  background-color: darken(var(--color-accent), 10%);
+}
+
+/* === Заголовки и текст === */
+h1, h2, h3 {
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1em;
+  color: var(--color-muted);
+}
+
+/* === Карточки === */
+.card {
+  background: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  transition: transform var(--transition-fast);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* === Адаптивность === */
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+/* === Анимация появления карточек === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+body {
+  background: linear-gradient(135deg, #f0f9ff, #dff1ff);
+  background-image: url('img/bg-pattern.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+ 
+
+.duo-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  text-align: center;
+  animation: fadeInUp 0.6s ease-out;
+  max-width: 200px;
+  margin: 1rem auto;
+}
+
+.duo-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.duo-card .word {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+.duo-card .translation {
+  font-size: 1rem;
+  color: var(--color-muted);
+}
+.duo-mascot {
+  width: 120px;
+  margin: 1rem auto;
+  display: block;
+}
+
+.duo-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.duo-card .word {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+.duo-card .translation {
+  font-size: 1rem;
+  color: var(--color-muted);
+}
+.undraw-img {
+  width: 100%;
+  max-width: 300px;
+  margin: 1rem auto;
+  display: block;
+}
+
+ .progress-bar {
+  background: #e0e0e0;
+  border-radius: 1rem;
+  height: 20px;
+  width: 100%;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: var(--color-accent);
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.quiz-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  margin: 1rem 0;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.quiz-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.quiz-card label {
+  display: block;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+#scoreResult {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--color-accent);
+  margin: 1rem 0;
+  text-align: center;
+}
+body {
+  background-image: url("img/shablon.png"); /* или bg-classroom.jpg */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+h1, h2 {
+  font-family: 'Inter', sans-serif;
+  color: #003366;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  text-align: center;
+}
+#quiz-options button {
+  display: block;
+  width: 100%;
+  margin: 0.5rem auto;
+  padding: 0.5rem 1rem;
+  background-color: #e0f0ff;
+  border: 2px solid var(--color-accent);
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #222; /* ← тёмный текст */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#quiz-options button:hover {
+  background-color: #c0e0ff;
+}
+body {
+  color: #fff;
+}
+
+.quiz-card, .duo-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #222;
+} 
+.fade-in {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+#quizContainer {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+.undraw-img {
+  max-height: 200px;
+  object-fit: contain;
+}
+.quiz-card {
+  margin-bottom: 1rem;
+}
+
+#multi-quiz-section {
+  padding-bottom: 2rem;
+}
+h1, h2, h3 {
+  font-family: 'Inter', sans-serif;
+  color: #003366;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  text-align: center;
+}
+.button, button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  margin: 0.5rem auto;
+  text-align: center;
+}
+
+.button:hover, button:hover {
+  background-color: #005fcc;
+  transform: scale(1.05);
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 2px solid #ccc;
+  border-radius: 1rem;
+  font-size: 1rem;
+}
+
+#register-form, #login-form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+  margin: 1rem auto;
+}
+body {
+  color: #fff;
+}
+
+.quiz-card, .duo-card, #register-form, #login-form {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #222;
+}
+#score {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  display: inline-block;
+}
+#quiz-question {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #222; /* ← тёмный цвет */
+  text-align: center;
+  margin: 1rem 0;
+}

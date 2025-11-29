@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Учим немецкий</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Ласкаво просимо до додатку для вивчення німецької!</h1>
+  </header>
+
+  <main>
+<section id="word-section" style="display:none;">
+  <h2>Слово дня</h2>
+
+  <!-- 🦉 Талисман -->
+  
+
+  <!-- 🍎 Карточка слова -->
+  <<div class="duo-card">
+  <img id="word-image" src="img/images.png" alt="Apfel" />
+  <p class="word" id="word">Apfel</p>
+  <p class="translation" id="translation">Яблуко</p>
+</div>
+  <!-- 🔊 Кнопки -->
+  <button class="button" onclick="playAudio()">🔊 Вимова</button>
+  <button class="button" onclick="nextWord()">➡️ Наступне слово</button>
+  <p id="score">Правильні відповіді: 0</p>
+  <button class="button" onclick="resetProgress()">🔄 Скинути прогрес</button>
+</section>
+    <section id="single-quiz-section" style="display:none;">
+      <h2>Міні-тест по поточному слову</h2>
+      <p id="quiz-question"></p>
+      <div id="quiz-options"></div>
+    </section>
+
+<section id="multi-quiz-section" style="display: none;">
+  <h2>Багатокроковий тест</h2>
+  <div id="quizContainer"></div>
+  <p id="scoreResult"></p>
+  <button onclick="checkAnswers()">✅ Перевірити відповіді</button>
+  <button onclick="resetMultiQuiz()">🔄 Скинути тест</button>
+</section>
+
+  <!-- 🌙 Иллюстрация -->
+  <img src="img/undraw_to-the-moon_w1wa.svg" alt="Motivation" class="undraw-img" />
+
+  <!-- 🔢 Прогресс -->
+  <div class="progress-bar">
+    <div class="progress-fill" id="multi-progress" style="width: 0%;"></div>
+  </div>
+
+		<section id="auth-section">
+  <h2>Вхід / Реєстрація</h2>
+
+  <!-- Иллюстрация -->
+  <img src="img/undraw_software-engineer_xv60.svg" alt="Software Engineer" class="undraw-img" />
+
+  <!-- Форма регистрации -->
+  <div id="register-form">
+    <h3>Реєстрація</h3>
+    <input type="text" id="reg-name" placeholder="Имя" />
+    <input type="email" id="reg-email" placeholder="Email" />
+    <input type="password" id="reg-password" placeholder="Пароль" />
+    <button onclick="register()">Зареєструватися</button>
+  </div>
+</section>
+      
+      <div id="login-form">
+        <h3>Вхід</h3>
+        <input type="email" id="login-email" placeholder="Email" />
+        <input type="password" id="login-password" placeholder="Пароль" />
+        <button onclick="login()">Війти</button>
+      </div>
+
+      <p id="welcome-message"></p>
+      <button onclick="logout()" id="logout-btn" style="display:none;">Вийти</button>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+     const cards = document.querySelectorAll(".quiz-card"); 
+      cards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.1}s`;
+      });
+    });
+</script>
+</body>
+</html>
